@@ -5,8 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Isaac's Blog</title>
   </head>
-  <body style="background-color: black; display: flex; flex-direction: column; font-size: 32px; justify-content: center; align-items: center">
-    <h1 style="color: rgb(80, 80, 255);">Blog</h1>
-    <p style="color: rgb(200, 200, 255);"> This is a blog created by Isaac Luengas. Feel free to chat amongst each-other</p>
+  <body
+    style="
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      font-size: 32px;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <h1 style="color: rgb(80, 80, 255)">Blog</h1>
+    <p style="color: rgb(200, 200, 255)">
+      This is a blog created by Isaac Luengas. Feel free to chat amongst
+      each-other
+    </p>
+    <div style="color: white">
+      {% for post in posts %}
+      <article
+        style="
+          box-shadow: 0 10px 10px rgba(247, 233, 233, 0.4); /* Adjust the values for the shadow effect */
+          border-radius: 10px;
+          margin-top: 40px;
+          margin-bottom: 40px;
+          padding: 20px;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        "
+      >
+        <time
+          style="
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(161, 166, 245);
+            font-weight: lighter;
+          "
+        >
+          published: {{ post.published_date }}
+        </time>
+        <h2
+          style="
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(255, 74, 74);
+          "
+        >
+          <a href="">{{ post.title }}</a>
+        </h2>
+        <p
+          style="
+            width: calc(100% - 20px);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(180, 180, 180);
+            color: black;
+          "
+        >
+          {{ post.text|linebreaksbr }}
+        </p>
+      </article>
+      {% endfor %}
+    </div>
   </body>
 </html>
