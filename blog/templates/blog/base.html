@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isaac's Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      font-size: 32px;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div
+      style="
+        background-color: orange;
+        display: flex;
+        justify-content: left;
+        align-items: start;
+        width: 100%;
+      "
+    >
+      <h1 style="color: white; font-family: lobster; margin-left: 50px">
+        My Blog
+      </h1>
+    </div>
+    <div style="color: white; margin-left: 50px; width: calc(100% - 50px)">
+      {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
