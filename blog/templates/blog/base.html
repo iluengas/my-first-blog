@@ -31,8 +31,22 @@
         width: 100%;
       "
     >
+      <a
+        href="{% url 'post_new' %}"
+        class="top-menu"
+        style="
+          border: 1px solid;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        {% include './icons/file-earmark-plus.svg' %}
+      </a>
       <h1 style="color: white; font-family: lobster; margin-left: 50px">
-        My Blog
+        <a href="{% url 'post_list' %}">My Blog</a>
       </h1>
     </div>
     <div style="color: white; margin-left: 50px; width: calc(100% - 50px)">

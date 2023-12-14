@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %} {% block content %}
+<section
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <h2 style="font-size: 25px; font-family: 'lobster', 'arial'; color: black">
+    New post
+  </h2>
+  <form
+    method="POST"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+    "
+  >
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+</section>
+{% endblock %}
